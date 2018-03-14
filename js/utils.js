@@ -1,5 +1,5 @@
 define(['jquery'], ($) => {
-    const methods = {
+    const utils = {
         append: arg => {
             $('#app').append(arg);
         },
@@ -11,5 +11,5 @@ define(['jquery'], ($) => {
         })
     };
 
-    return methods;
+    return utils;
 });

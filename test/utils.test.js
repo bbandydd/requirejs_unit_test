@@ -1,18 +1,9 @@
-require('amd-loader');
-const chai = require('chai');
-const expect = chai.expect;
+const utils = require('../js/utils');
 
-define(['../js/utils.js'], (utils) => {
-    describe('utils', () => {
-        it('should get data', () => {
-            const data = {
-                data: [
-                    { id: 1, text: '111'},
-                    { id: 2, text: '222'},
-                ]
-            };
+const mockJQ = { append: jest.fn() };
 
-            expect(utils.getData()).to.deep.equal(data);
-        });
-    });
+test('utils should return true', () => {
+    const app = utils(mockJQ);
+    const data = app.getData();
+    expect(data.data[0].id).toBe(1);
 });

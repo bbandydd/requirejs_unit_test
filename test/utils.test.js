@@ -30,7 +30,7 @@ describe('Utils', () => {
 });
 
 describe('Utils document', () => {
-    it('should return dom', () => {
+    it('should append dom', () => {
         document.body.innerHTML = '<div id="app"></div>';
         const app = utils($);
         const html = '<p>test</p>';

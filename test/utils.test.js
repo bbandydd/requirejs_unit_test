@@ -1,4 +1,5 @@
 const utils = require('../js/utils');
+const $ = require('jquery');
 
 const mock = {
     jq: jest.fn(),
@@ -25,5 +26,15 @@ describe('Utils', () => {
         const matchObject = {"data": [{"id": 1, "text": "111"}, {"id": 2, "text": "222"}]};
 
         expect(data).toEqual(matchObject);
+    });
+});
+
+describe('Utils document', () => {
+    it('should return dom', () => {
+        document.body.innerHTML = '<div id="app"></div>';
+        const app = utils($);
+        const html = '<p>test</p>';
+        app.append(html);
+        expect($('#app').html()).toBe(html);
     });
 });
